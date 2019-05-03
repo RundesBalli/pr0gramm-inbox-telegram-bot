@@ -33,7 +33,7 @@ function getURLs($text) {
 }
 
 /**
- * Funktion zum Senden von Nachrichten an einen Telegram Clients.
+ * Funktion zum Senden von Nachrichten an einen Telegram Client.
  * 
  * @param string  Der zu sendende Text
  * @param string  Die Chat-ID an die der Text gesendet werden soll
