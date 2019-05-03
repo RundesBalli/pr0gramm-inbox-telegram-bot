@@ -6,7 +6,7 @@ Damit der Bot funktioniert muss der [pr0gramm-apiCall](https://github.com/Rundes
 Näheres dazu in der Konfigurationsdatei.
 
 ## Einrichtung
-Zu erst muss die `config.template.php` nach `config.php` kopiert oder umbenannt werden.
+Zu erst muss die `config.template.php` in `config.php` kopiert oder umbenannt werden.
 Die darin erforderlichen Konfigurationsanpassungen sind ausführlich in den Kommentaren beschrieben.
 
 ## Anwendung
