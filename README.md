@@ -1,5 +1,5 @@
 # pr0gramm-telegram-inbox-bot
-Bot zum Auslesen der Inbox auf https://pr0gramm.com
+Bot zum Auslesen der Inbox auf https://pr0gramm.com und zur Benachrichtigung via Telegram.
 
 ## Abhängigkeiten
 Damit der Bot funktioniert muss der [pr0gramm-apiCall](https://github.com/RundesBalli/pr0gramm-apiCall) eingebunden werden.  
