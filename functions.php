@@ -13,7 +13,7 @@
  * @return array/NULL Wenn gültige URLs vorhanden sind wird ein Array zurückgegeben, sonst NULL.
  */
 function getURLs($text) {
-  $regex = '/(^|\s)((https?:\/\/)?([\w-]+)(\.[a-z-]{2,})(\.[a-z-]{2,})?(\/\S*)?)/i';
+  $regex = '/(^|\s)((https?:\/\/)?(\.?[\w-]+)*(\.[a-z-]{2,})(\.[a-z-]{2,})?(\/\S*)?)/i';
   preg_match_all($regex, $text, $matches);
   $urls = array();
   foreach($matches[0] as $key => $value) {
