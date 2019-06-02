@@ -12,3 +12,10 @@ Die darin erforderlichen Konfigurationsanpassungen sind ausführlich in den Komm
 ## Anwendung
 Damit der Bot minütlich die Inbox abfragt muss er in `crontab -e` eingetragen werden:  
 `* * * * * php /pfad/zum/bot.php`
+
+## Screenshots
+### Kommentar oder Erwähnung
+![Kommentar oder Erwähnung](https://raw.githubusercontent.com/RundesBalli/pr0gramm-inbox-telegram-bot/master/screenshots/inbox-bot-comment.png)
+
+### Privatnachricht
+![Privatnachricht](https://raw.githubusercontent.com/RundesBalli/pr0gramm-inbox-telegram-bot/master/screenshots/inbox-bot-message.png)
