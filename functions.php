@@ -47,6 +47,10 @@ function SendMessageToTelegram($text = NULL, $chat_id = NULL, $disableNotificati
   }
   
   global $apiToken;
+  /**
+   * Im Bot wird die config.php und die apiCall.php (und dessen config.php) vor der functions.php
+   * eingebunden. Die SendMessageToTelegram Funktion wird das selbe Interface wie der apiCall nutzen.
+   */
   global $bindTo;
   global $telegamUseragent;
   
