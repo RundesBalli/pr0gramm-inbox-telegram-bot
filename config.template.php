@@ -54,6 +54,8 @@ $telegamUseragent = "";
  * 
  * Beispielwert: RundesBalli
  * 
+ * ACHTUNG: Darf nicht der selbe User wie im apiCall sein!
+ * 
  * @var string
  */
 $alternativeUser = "";
