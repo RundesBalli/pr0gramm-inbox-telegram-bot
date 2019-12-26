@@ -85,6 +85,11 @@ function SendMessageToTelegram($text = NULL, $chat_id = NULL, $disableNotificati
     return FALSE;
   }
   curl_close($ch);
-  return TRUE;
+  $success = json_decode($response, TRUE)['ok'];
+  if($success === TRUE) {
+    return TRUE;
+  } else {
+    return FALSE;
+  }
 }
 ?>

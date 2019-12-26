@@ -44,6 +44,13 @@ foreach($response['messages'] as $key => $message) {
       $text.=$linkcount.": ".$value."\n";
     }
   }
-  SendMessageToTelegram($text, $chat_id);
+  if(SendMessageToTelegram($text, $chat_id) === FALSE) {
+    $pnData = array(
+      "recipientName" => $alternativeUser,
+      "_nonce" => $nonce,
+      "comment" => $text
+    );
+    apiCall("https://pr0gramm.com/api/inbox/post", $pnData);
+  }
 }
 ?>

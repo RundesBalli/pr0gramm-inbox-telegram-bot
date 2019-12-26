@@ -45,4 +45,16 @@ $chat_id = "";
  * @var string
  */
 $telegamUseragent = "";
+
+/**
+ * Alternativnutzer, an den die Nachricht geschickt wird.
+ * 
+ * Falls Telegram nicht erreichbar ist oder die Funktion fehlschlägt, dann wird an diesen User
+ * die Nachricht weitergeleitet.
+ * 
+ * Beispielwert: RundesBalli
+ * 
+ * @var string
+ */
+$alternativeUser = "";
 ?>
