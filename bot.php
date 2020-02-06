@@ -106,6 +106,9 @@ foreach($response as $key => $message) {
       htmlspecialchars(json_encode($message), ENT_QUOTES)."\n".
       "```\n";
     }
+    /**
+     * Alle URLs aus der Nachricht exportieren und separat (klickbar) aufführen.
+     */
     $urls = getURLs($message['message']);
     if(is_array($urls) AND !empty($urls)) {
       $text.="\n*Links:*\n";
@@ -115,6 +118,10 @@ foreach($response as $key => $message) {
         $text.=$linkcount.": ".$value."\n";
       }
     }
+    /**
+     * Senden der Nachricht an Telegram. Sollte das Fehlschlagen wird an den alternativen User
+     * weitergeleitet.
+     */
     if(SendMessageToTelegram($text, $chat_id) === FALSE) {
       $pnData = array(
         "recipientName" => $alternativeUser,
