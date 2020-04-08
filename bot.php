@@ -76,7 +76,30 @@ foreach($response as $key => $message) {
       "-----------\n".
       "```\n".
       htmlspecialchars($message['message'], ENT_QUOTES)."\n".
-      "```\n";
+      "```";
+      /**
+       * Anzeigen des Kommentarbaumes
+       */
+      $text.="-----------\n*Baum:*\n";
+      $treeResponse = apiCall("https://pr0gramm.com/api/items/info?itemId=".$message['itemId'])['comments'];
+      $comments = array();
+      foreach($treeResponse as $key => $val) {
+        $comments[$val['id']] = $val;
+      }
+      $tree = array();
+      $parent = $comments[$message['id']]['id'];
+      do {
+        $tree[] = array("name" => $comments[$parent]['name'], "commentId" => $comments[$parent]['id']);
+        $parent = $comments[$parent]['parent'];
+      } while($parent != 0);
+      krsort($tree);
+      $treeOutput = array();
+      $i = 0;
+      foreach($tree as $key => $val) {
+        $treeOutput[] = ($i != 0 ? str_repeat(" ", $i-1)."↳ " : NULL)."[@".$val['name']."](https://pr0gramm.com/new/".$message['itemId'].":comment".$val['commentId'].")";
+        $i++;
+      }
+      $text.= implode("\n", $treeOutput).(count($treeOutput) == 1 ? "\n_dieser Kommentar ist bereits auf der obersten Ebene_" : NULL)."\n";
     } elseif($message['type'] == 'follows') {
       /**
        * Stelz
@@ -111,7 +134,7 @@ foreach($response as $key => $message) {
      */
     $urls = getURLs($message['message']);
     if(is_array($urls) AND !empty($urls)) {
-      $text.="\n*Links:*\n";
+      $text.="-----------\n*Links:*\n";
       $linkcount = 0;
       foreach($urls as $urlkey => $value) {
         $linkcount++;
