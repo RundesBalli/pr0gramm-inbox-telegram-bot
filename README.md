@@ -19,3 +19,7 @@ Damit der Bot minütlich die Inbox abfragt muss er in `crontab -e` eingetragen w
 
 ### Privatnachricht
 ![Privatnachricht](https://raw.githubusercontent.com/RundesBalli/pr0gramm-inbox-telegram-bot/master/screenshots/inbox-bot-message.png)
+
+### Anzeige der Baumstruktur
+Wenn Parent-Kommentare existieren, dann wird der gesamte Kommentarbaum gezeigt (nur Usernamen):  
+![Baumstruktur](https://raw.githubusercontent.com/RundesBalli/pr0gramm-inbox-telegram-bot/master/screenshots/inbox-bot-tree.png)
